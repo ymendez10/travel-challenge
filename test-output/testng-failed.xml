@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Travelocity Challenge Test Suite]">
+  <parameter name="daysForTravel" value="2"/>
+  <parameter name="flyingTo" value="LAX"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="monthsToFuture" value="4"/>
+  <parameter name="flyingFrom" value="LAS"/>
+  <test name="Travelocity Tests(failed)">
+    <classes>
+      <class name="com.globantu.automation.yoniffer_mendez.test.TravelocityTest">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="afterMethod"/>
+          <include name="testSearchFlight" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.globantu.automation.yoniffer_mendez.test.TravelocityTest -->
+    </classes>
+  </test> <!-- Travelocity Tests(failed) -->
+</suite> <!-- Failed suite [Travelocity Challenge Test Suite] -->

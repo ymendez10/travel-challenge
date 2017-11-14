@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Travelocity Challenge Test Suite">
+
+	<parameter name="browser" value="chrome" />
+
+	<!-- Parameters test case 01 -->
+	<parameter name="flyingFrom" value="LAS" />
+	<parameter name="flyingTo" value="LAX" />
+	<parameter name="monthsToFuture" value="4" />
+	<parameter name="daysForTravel" value="2" />
+
+
+	<!-- Parameters tests group2 -->
+	
+
+	<test name="Travelocity Tests">
+		<classes>
+			<class
+				name="com.globantu.automation.yoniffer_mendez.test.TravelocityTest" />
+		</classes>
+	</test>
+<!-- 	<groups> -->
+<!-- 		<run> -->
+<!-- 			<include name="group1" /> -->
+<!-- 			<include name="group2" /> -->
+<!-- 		</run> -->
+<!-- 	</groups> -->
+</suite>
