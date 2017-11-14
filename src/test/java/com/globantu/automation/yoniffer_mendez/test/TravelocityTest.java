@@ -10,6 +10,6 @@ public class TravelocityTest extends BaseTests{
 	@Test
 	@Parameters({"flyingFrom","flyingTo","monthsToFuture","daysForTravel"})
 	public void testSearchFlight(String flyingFrom, String flyingTo, int monthsToFuture, int daysForTravel) {
-		assertEquals(getTravelocityHome().searchFlight(flyingFrom, flyingTo, monthsToFuture, daysForTravel).performActions("duration:asc",1,3),"Duration (Shortest)");
+		assertEquals(getTravelocityHome().searchFlight(flyingFrom, flyingTo, monthsToFuture, daysForTravel).performActions("duration:asc",1,4),"Duration (Shortest)");
 	}
 }
