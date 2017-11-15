@@ -6,8 +6,8 @@
 	<!-- Parameters test case 01 -->
 	<parameter name="flyingFrom" value="LAS" />
 	<parameter name="flyingTo" value="LAX" />
-	<parameter name="monthsToFuture" value="4" />
-	<parameter name="daysForTravel" value="2" />
+	<parameter name="monthsToFuture" value="3" />
+	<parameter name="daysForTravel" value="5" />
 
 
 	<!-- Parameters tests group2 -->

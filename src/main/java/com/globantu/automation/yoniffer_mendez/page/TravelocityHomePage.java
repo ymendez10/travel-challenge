@@ -77,6 +77,7 @@ public class TravelocityHomePage extends BasePage {
 
 		getWait().until(ExpectedConditions.elementToBeClickable(flyingToInput));
 		flyingToInput.sendKeys(flyingTo);
+		
 		getWait().until(ExpectedConditions.visibilityOf(flyingToItems));
 		// Select flying to
 		for (WebElement webElement : flyingToItems.findElements(By.tagName("li"))) {

@@ -19,8 +19,6 @@ public class TravelocityResultPage extends BasePage{
 	public TravelocityResultPage(WebDriver pDriver) {
 		super(pDriver);
 	}
-	
-	private List<String> options = new ArrayList<String>();
 
 	@FindBy(id="round-trip-flight")
 	private WebElement roundTripRadio;
@@ -103,15 +101,23 @@ public class TravelocityResultPage extends BasePage{
 		}
 	}
 	
-	public List<String> getResultOptions() {
-		
-		options.add(roundTripRadio.isSelected()+"");
-		options.add(departAirportInput.getAttribute("value"));
-		options.add(arrivalAirportInput.getAttribute("value"));
-		options.add(departDateInput.getAttribute("value"));
-		options.add(returnDateInput.getAttribute("value"));
-		
-		return options;
+	public boolean roundTripIsSelected(){
+		return roundTripRadio.isSelected();
+	}
+	public String getDeparture() {
+		return departAirportInput.getAttribute("value");
+	}
+	
+	public String getArrival() {
+		return arrivalAirportInput.getAttribute("value");
+	}
+	
+	public String getDepartDate() {
+		return departDateInput.getAttribute("value");
+	}
+	
+	public String getReturnDate() {
+		return returnDateInput.getAttribute("value");
 	}
 	
 }
