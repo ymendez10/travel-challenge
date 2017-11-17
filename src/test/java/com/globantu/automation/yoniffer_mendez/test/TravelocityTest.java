@@ -20,8 +20,8 @@ public class TravelocityTest extends BaseTests {
 	private String df= "MM/dd/yyyy";
 
 	@Test
-	@Parameters({ "flyingFrom", "flyingTo", "monthsToFuture", "daysForTravel" })
-	public void testSearchFlight(String flyingFrom, String flyingTo, int monthsToFuture, int daysForTravel) {
+	@Parameters({ "flyingFrom", "flyingTo", "monthsToFuture", "daysForTravel", "sortBy"})
+	public void testSearchFlight(String flyingFrom, String flyingTo, int monthsToFuture, int daysForTravel, String sortBy) {
 		
 		// get Result page
 		TravelocityResultPage resultPage=getTravelocityHome().searchFlight(flyingFrom, flyingTo, monthsToFuture, daysForTravel);
@@ -40,9 +40,13 @@ public class TravelocityTest extends BaseTests {
 		
 		// validate Return Date
 		assertEquals(resultPage.getReturnDate(),dt.plusMonths(monthsToFuture).plusDays(daysForTravel).toString(df));
+		
+		// validate sort by
+		assertEquals(resultPage.sortBy(sortBy), sortBy);
+		
+		assertEquals(resultPage.performActions(sortBy, 1, 3), resultPage.getDeparture());
+		
 
-		// assertEquals(getTravelocityHome().searchFlight(flyingFrom, flyingTo,
-		// monthsToFuture, daysForTravel).performActions("duration:asc",1,4),"Duration
-		// (Shortest)");
+		 //assertEquals(getTravelocityHome().searchFlight(flyingFrom, flyingTo, monthsToFuture, daysForTravel).performActions("duration:asc",1,4),"Duration(Shortest)");
 	}
 }

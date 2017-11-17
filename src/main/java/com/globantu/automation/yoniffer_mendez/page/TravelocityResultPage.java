@@ -1,10 +1,5 @@
 package com.globantu.automation.yoniffer_mendez.page;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -47,12 +42,9 @@ public class TravelocityResultPage extends BasePage{
 	@FindBy(xpath="//*[@id='titleBar']/h1/div/span[1]")
 	private WebElement tittleBar;
 	
-	private final By liTest = By.tagName("li");
-	private static final By buttonTest = By.tagName("button");
-	
-	public String performActions(String sortby,int departureRowNumber,int arrivalRowNumber) {
+	public String performActions(String sortBy,int departureRowNumber,int arrivalRowNumber) {
 		
-		sortBy(sortby);
+		sortBy(sortBy);
 
 		selectResult(departureRowNumber);
 
@@ -69,23 +61,25 @@ public class TravelocityResultPage extends BasePage{
 		getWait().until(ExpectedConditions.elementToBeClickable(forcedChoiceNoThanks));
 		forcedChoiceNoThanks.click();
 		
-		try {
-			Thread.sleep(20000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(20000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		return new TravelocityTripDetailPage(getDriver()).getFromText();
 	}
 	
 	public String sortBy(String data) {
 		
+
 		getWait().until(ExpectedConditions.elementToBeClickable(sortSelect));
 		Select select= new Select(sortSelect);
+		
 		select.selectByValue(data);
 		
-		return select.getFirstSelectedOption().getText();
+		return select.getFirstSelectedOption().getAttribute("value");
 
 	}
 	

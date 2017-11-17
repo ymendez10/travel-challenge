@@ -18,6 +18,11 @@ public abstract class BasePage {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
+	protected static final By liTest = By.tagName("li");
+	protected static final By buttonTest = By.tagName("button");
+	protected static final By tdTest = By.tagName("td");
+	protected static final By spanTest = By.tagName("span");
+	
 	public BasePage(WebDriver pDriver) {
 		PageFactory.initElements(pDriver, this);
 		wait= new WebDriverWait(pDriver,20);

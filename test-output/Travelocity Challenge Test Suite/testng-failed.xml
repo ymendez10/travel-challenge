@@ -4,8 +4,9 @@
   <parameter name="daysForTravel" value="5"/>
   <parameter name="flyingTo" value="LAX"/>
   <parameter name="browser" value="chrome"/>
-  <parameter name="monthsToFuture" value="0"/>
+  <parameter name="monthsToFuture" value="3"/>
   <parameter name="flyingFrom" value="LAS"/>
+  <parameter name="sortBy" value="duration:asc"/>
   <test name="Travelocity Tests(failed)">
     <classes>
       <class name="com.globantu.automation.yoniffer_mendez.test.TravelocityTest">

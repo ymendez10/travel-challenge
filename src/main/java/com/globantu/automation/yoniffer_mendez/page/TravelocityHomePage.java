@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.joda.time.DateTime;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -68,7 +67,7 @@ public class TravelocityHomePage extends BasePage {
 		getWait().until(ExpectedConditions.visibilityOf(flyingFromItems));
 
 		// Select flying from
-		for (WebElement webElement : flyingFromItems.findElements(By.tagName("li"))) {
+		for (WebElement webElement : flyingFromItems.findElements(liTest)) {
 			if (webElement.getText().contains(flyingFrom)) {
 				webElement.click();
 				break;
@@ -80,7 +79,7 @@ public class TravelocityHomePage extends BasePage {
 		
 		getWait().until(ExpectedConditions.visibilityOf(flyingToItems));
 		// Select flying to
-		for (WebElement webElement : flyingToItems.findElements(By.tagName("li"))) {
+		for (WebElement webElement : flyingToItems.findElements(liTest)) {
 			if (webElement.getText().contains(flyingTo)) {
 				webElement.click();
 				break;
@@ -97,7 +96,7 @@ public class TravelocityHomePage extends BasePage {
 			departNextMonthButton.click(); // go to the next n months
 		}
 		
-		List<WebElement> departingDates = departDatePicker.findElements(By.tagName("td"));
+		List<WebElement> departingDates = departDatePicker.findElements(tdTest);
 
 		for (WebElement date : departingDates) {
 			if (date.getText().equals(dt.getDayOfMonth() + "")) {
@@ -111,7 +110,7 @@ public class TravelocityHomePage extends BasePage {
 		getWait().until(ExpectedConditions.elementToBeClickable(returnDateInput));
 		returnDateInput.click();
 
-		List<WebElement> returningDates = returnDatePicker.findElements(By.tagName("td"));
+		List<WebElement> returningDates = returnDatePicker.findElements(tdTest);
 
 		for (WebElement date : returningDates) {
 			if (date.getText().equals(dt.getDayOfMonth()+daysForTravel + "")) {

@@ -8,6 +8,9 @@
 	<parameter name="flyingTo" value="LAX" />
 	<parameter name="monthsToFuture" value="3" />
 	<parameter name="daysForTravel" value="5" />
+	<parameter name="sortBy" value="duration:asc" />
+	
+	
 
 
 	<!-- Parameters tests group2 -->
