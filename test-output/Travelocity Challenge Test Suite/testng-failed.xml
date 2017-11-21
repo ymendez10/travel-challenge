@@ -3,8 +3,10 @@
 <suite name="Failed suite [Travelocity Challenge Test Suite]">
   <parameter name="daysForTravel" value="5"/>
   <parameter name="flyingTo" value="LAX"/>
+  <parameter name="departureRowNumber" value="1"/>
   <parameter name="browser" value="chrome"/>
   <parameter name="monthsToFuture" value="3"/>
+  <parameter name="arrivalRowNumber" value="3"/>
   <parameter name="flyingFrom" value="LAS"/>
   <parameter name="sortBy" value="duration:asc"/>
   <test name="Travelocity Tests(failed)">

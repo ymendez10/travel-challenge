@@ -14,6 +14,7 @@ public class BaseTests {
 
 	private DriverHandler driver;
 	private TravelocityHomePage travelocityHome;
+
 	
 	@BeforeSuite(alwaysRun=true)
 	@BeforeGroups(alwaysRun=true)

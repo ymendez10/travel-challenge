@@ -1,5 +1,6 @@
 package com.globantu.automation.yoniffer_mendez.page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,36 +40,23 @@ public class TravelocityResultPage extends BasePage{
 	@FindBy(id="forcedChoiceNoThanks")
 	private WebElement forcedChoiceNoThanks;
 	
-	@FindBy(xpath="//*[@id='titleBar']/h1/div/span[1]")
-	private WebElement tittleBar;
+	@FindBy(id="outboundflightModule")
+	private WebElement departureSelected;
 	
-	public String performActions(String sortBy,int departureRowNumber,int arrivalRowNumber) {
+	public TravelocityTripDetailPage performActions(String sortBy,int departureRowNumber,int arrivalRowNumber) {
 		
 		sortBy(sortBy);
 
 		selectResult(departureRowNumber);
 
-//		getWait().until(ExpectedConditions.attributeContains(tittleBar, "innerText", "return to"));
+		getWait().until(ExpectedConditions.visibilityOf(departureSelected));
 		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		selectResult(arrivalRowNumber);
 		
 		getWait().until(ExpectedConditions.elementToBeClickable(forcedChoiceNoThanks));
 		forcedChoiceNoThanks.click();
 		
-//		try {
-//			Thread.sleep(20000);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
-		return new TravelocityTripDetailPage(getDriver()).getFromText();
+		return new TravelocityTripDetailPage(getDriver());
 	}
 	
 	public String sortBy(String data) {

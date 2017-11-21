@@ -3,6 +3,7 @@ package com.globantu.automation.yoniffer_mendez.page;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,7 @@ public abstract class BasePage {
 
 	private WebDriver driver;
 	private WebDriverWait wait;
+	private JavascriptExecutor jsExecutor;
 	
 	protected static final By liTest = By.tagName("li");
 	protected static final By buttonTest = By.tagName("button");
@@ -27,6 +29,7 @@ public abstract class BasePage {
 		PageFactory.initElements(pDriver, this);
 		wait= new WebDriverWait(pDriver,20);
 		driver=pDriver;
+		jsExecutor = (JavascriptExecutor) driver;
 	}
 
 	public WebDriver getDriver() {
@@ -39,6 +42,10 @@ public abstract class BasePage {
 	
 	public void dispose() {
 		if(driver!=null) driver.quit();
+	}
+	
+	public JavascriptExecutor getJsExecutor() {
+		return jsExecutor;
 	}
 	
 	public WebElement fluentWait(final By locator) {

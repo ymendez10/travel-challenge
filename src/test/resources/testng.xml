@@ -9,6 +9,8 @@
 	<parameter name="monthsToFuture" value="3" />
 	<parameter name="daysForTravel" value="5" />
 	<parameter name="sortBy" value="duration:asc" />
+	<parameter name="departureRowNumber" value="1" />
+	<parameter name="arrivalRowNumber" value="3" />
 	
 	
 
